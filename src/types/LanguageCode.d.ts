@@ -1,7 +1,6 @@
 
 type LanguageCode =
-  | 'om' // Afaan Oromo
-  | 'am' // Amharic
-  | 'ti' // Tigrinya
+  | 'prs' // Dari (Afghan Persian)
+  | 'pus' // Pashto (Inclusive Pashto, Pushto)
 
 export default LanguageCode

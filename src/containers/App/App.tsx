@@ -8,7 +8,7 @@ import PsiphonIndicator from 'containers/PsiphonIndicator'
 import Router from 'containers/Router'
 import MediaPlayer from 'containers/MediaPlayer'
 import CircumventionDrawer from 'containers/CircumventionDrawer'
-import Intro from 'containers/Intro'
+import LanguageChooser from 'containers/LanguageChooser'
 import client from 'helpers/graphql-client'
 import { showControls } from '@voiceofamerica/voa-shared/helpers/mediaControlHelper'
 import { scheduleDaily } from 'helpers/localNotifications'
@@ -63,7 +63,7 @@ export default class App extends React.Component<{}, State> {
           {
             appReady
             ? <div key='app' className={app}>
-                <Intro />
+                <LanguageChooser />
                 <PsiphonIndicator />
                 <Router />
                 <MediaPlayer />

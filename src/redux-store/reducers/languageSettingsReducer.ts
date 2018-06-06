@@ -18,10 +18,19 @@ import { ActorMap, buildReducer } from '../actorMap'
 import LanguageSettings from 'types/LanguageSettings'
 
 const actors: ActorMap<LanguageSettings> = {
-  [setPrimaryLanguageType]: (prev, { primaryLanguage }: SetPrimaryLanguageAction) => ({
-    ...prev,
-    primaryLanguage,
-  }),
+  [setPrimaryLanguageType]: (prev, { primaryLanguage }: SetPrimaryLanguageAction) => {
+    if (!prev.secondaryLanguagesSet) {
+      prev = {
+        ...prev,
+        secondaryLanguages: [primaryLanguage],
+      }
+    }
+
+    return {
+      ...prev,
+      primaryLanguage,
+    }
+  },
   [setSecondaryLanguagesType]: (prev, { secondaryLanguages }: SetSecondaryLanguagesAction) => ({
     ...prev,
     secondaryLanguages,

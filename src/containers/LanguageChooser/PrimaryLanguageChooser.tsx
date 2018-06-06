@@ -3,20 +3,27 @@ import * as React from 'react'
 import { connect, Dispatch } from 'react-redux'
 import { compose } from 'redux'
 
-import markIntroDone from 'redux-store/actions/markIntroDone'
+import Checkbox from '@voiceofamerica/voa-shared/components/Checkbox'
+
+import setPrimaryLanguage from 'redux-store/actions/setPrimaryLanguage'
+import setLanguageCompletionState from 'redux-store/actions/setLanguageCompletionState'
+
+import LanguageCode from 'types/LanguageCode'
 import AppState from 'types/AppState'
 
-import {
-  introLabels,
-} from 'labels'
+import * as Dari from 'labels/labels.prs'
+import * as Pashto from 'labels/labels.pus'
+import { introLabels } from 'labels'
 
-import { introRoute, content, continueButton } from './LanguageChooser.scss'
+import { languageChooser, content, titles, explanation, continueButton } from './LanguageChooser.scss'
 
 interface StateProps {
-  introDone: boolean
+  primaryLanguage: LanguageCode
+  primaryLanguageSet: boolean
 }
 
 interface DispatchProps {
+  setPrimaryLanguage: (code: LanguageCode) => void
   onContinue: () => void
 }
 
@@ -24,29 +31,61 @@ type Props = StateProps & DispatchProps
 
 class SettingsRoute extends React.Component<Props> {
   render () {
-    const { introDone, onContinue } = this.props
+    const { primaryLanguage, primaryLanguageSet, setPrimaryLanguage, onContinue } = this.props
 
-    if (introDone) {
+    const languageChosen = !!primaryLanguage
+
+    if (primaryLanguageSet) {
       return null
     }
 
     return (
-      <div className={introRoute}>
+      <div className={languageChooser}>
         <div className={content}>
-          {introLabels.content}
+          <div className={titles}>
+            <div>
+              {Dari.introLabels.primary}
+            </div>
+            <div>
+              {Pashto.introLabels.primary}
+            </div>
+          </div>
+          <Checkbox
+            checked={primaryLanguage === Dari.languageCode}
+            onChange={() => setPrimaryLanguage(Dari.languageCode)}
+          >
+            {Dari.languageName}
+          </Checkbox>
+          <Checkbox
+            checked={primaryLanguage === Pashto.languageCode}
+            onChange={() => setPrimaryLanguage(Pashto.languageCode)}
+          >
+            {Pashto.languageName}
+          </Checkbox>
+          {
+            languageChosen
+            ? <div className={explanation}>{introLabels.primaryDescription}</div>
+            : null
+          }
         </div>
-        <div className={continueButton} onClick={onContinue}>{introLabels.continue}</div>
+        {
+          languageChosen
+          ? <div className={continueButton} onClick={onContinue}>{introLabels.continue}</div>
+          : null
+        }
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ progress: { introDone } }: AppState): StateProps => ({
-  introDone,
+const mapStateToProps = ({ languageSettings: { primaryLanguage, primaryLanguageSet } }: AppState): StateProps => ({
+  primaryLanguage,
+  primaryLanguageSet,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): DispatchProps => ({
-  onContinue: () => dispatch(markIntroDone()),
+  setPrimaryLanguage: (primaryLanguage) => dispatch(setPrimaryLanguage({ primaryLanguage })),
+  onContinue: () => dispatch(setLanguageCompletionState({ primaryLanguageSet: true })),
 })
 
 const withRedux = connect(mapStateToProps, mapDispatchToProps)

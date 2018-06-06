@@ -1,12 +1,13 @@
 
-// Tigrinya
+// Dari
 import * as React from 'react'
 
 import { Audience } from 'helpers/graphql-types'
 
-export const languageName = 'ትግርኛ'
+export const languageName = 'دری‎'
+export const languageCode = 'prs'
 
-export const graphqlAudience = Audience.enus
+export const graphqlAudience = Audience.prs
 
 export const articleLabels = {
   updatedOn: (date: string) => `Updated on ${date}`,
@@ -21,6 +22,7 @@ export const categorySettingsLabels = {
   allCategories: 'All Categories',
   dragAndDrop: 'Drag Categories',
   headlinesFirst: 'Headline Category is First',
+  cancel: 'Cancel',
 }
 
 export const circumventionDrawerLabels = {
@@ -52,6 +54,10 @@ export const homeLabels = {
 }
 
 export const introLabels = {
+  primary: 'Choose Primary Language',
+  secondary: 'Choose Secondary Language(s)',
+  primaryDescription: 'Dari: This is the language that the settings and other app labels will appear in.  You can still get content from both languages.',
+  secondaryDescription: 'This used to determine the default categories to display to you.  You can change this later in your settings.',
   content: 'Welcome to Voice of America!',
   continue: 'Continue',
 }

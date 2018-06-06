@@ -6,9 +6,8 @@ import { setDirection } from '@voiceofamerica/voa-shared/helpers/textDirectionHe
 
 import store from 'redux-store'
 
-import * as AfaanOromo from './labels/labels.om'
-import * as Amharic from './labels/labels.am'
-import * as Tigrinya from './labels/labels.ti'
+import * as Dari from './labels/labels.prs'
+import * as Pashto from './labels/labels.pus'
 
 setAnalyticsOptions({
   language: 'english',
@@ -23,20 +22,18 @@ setDirection('ltr')
 
 moment.locale('en-us')
 
-const getCurrentLabels = (): (typeof AfaanOromo | typeof Amharic | typeof Tigrinya) & Object => {
+const getCurrentLabels = (): (typeof Dari | typeof Pashto) & Object => {
   const { languageSettings: { primaryLanguage } } = store.getState()
-  if (primaryLanguage === 'om') {
-    return AfaanOromo
-  } else if (primaryLanguage === 'am') {
-    return Amharic
-  } else if (primaryLanguage === 'ti') {
-    return Tigrinya
+  if (primaryLanguage === 'prs') {
+    return Dari
+  } else if (primaryLanguage === 'pus') {
+    return Pashto
   } else {
-    return AfaanOromo
+    return Dari
   }
 }
 
-const labelProxy = new Proxy<typeof AfaanOromo>(AfaanOromo, {
+const labelProxy = new Proxy<typeof Dari>(Dari, {
   has: (target, key) => {
     const labels = getCurrentLabels() || target
     return labels.hasOwnProperty(key)

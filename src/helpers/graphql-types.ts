@@ -7,6 +7,8 @@ export enum Audience {
   zhcn = "zhcn",
   zhtw = "zhtw",
   fa = "fa",
+  prs = "prs",
+  pus = "pus",
 }
 
 

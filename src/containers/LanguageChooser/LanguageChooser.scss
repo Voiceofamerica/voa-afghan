@@ -1,7 +1,7 @@
 
 @import "'~@voiceofamerica/voa-shared/commonStyles/index";
 
-.introRoute {
+.languageChooser {
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -17,13 +17,20 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     font-size: 22px;
 
-    .heading {
+    .titles {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       font-weight: bold;
-      font-size: 28px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .explanation {
+      padding: 30px 0;
     }
   }
 
@@ -35,5 +42,9 @@
     padding: 10px;
     font-size: 35px;
     text-align: center;
+
+    &.disabled {
+      background: $voa-grey;
+    }
   }
 }
