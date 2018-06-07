@@ -11,17 +11,17 @@ export const graphqlAudience = Audience.prs
 
 export const articleLabels = {
   updatedOn: (date: string) => `Updated on ${date}`,
-  relatedContent: 'Related stories',
+  relatedContent: 'مطالب مرتبط',
   shareMessage: '',
   galleryLoading: 'Gallery loading...',
 }
 
 export const categorySettingsLabels = {
-  header: 'Choose Categories',
-  myCategories: 'My Categories',
-  allCategories: 'All Categories',
-  dragAndDrop: 'Drag Categories',
-  headlinesFirst: 'Headline Category is First',
+  header: 'تنظیم مطالب',
+  myCategories: 'دسته بندی های من',
+  allCategories: 'همۀ مطالب',
+  dragAndDrop: 'بخش های مورد نظر تان را اینجا اضافه کنید',
+  headlinesFirst: 'فهرست سرخط ها',
   cancel: 'Cancel',
 }
 
@@ -34,22 +34,22 @@ export const circumventionDrawerLabels = {
 }
 
 export const editorsChoiceLabels = {
-  header: 'Editor\'s Choice',
+  header: 'انتخاب ادیتر',
 }
 
 export const errorBoundaryLabels = {
-  error: 'An error occurred.',
-  retry: 'Retry',
+  error: 'با ما باشید!',
+  retry: 'دوباره تلاش کنید',
 }
 
 export const favoritesSettingsLabels = {
-  header: 'My Favorites',
-  removeAll: 'Remove All Favorites',
+  header: 'برگزیده‌ها',
+  removeAll: 'همه را حذف کنید',
 }
 
 export const homeLabels = {
-  headlines: 'Headlines',
-  search: 'Search',
+  headlines: 'سرخط خبرها',
+  search: 'جستجو',
   manage: '+',
 }
 
@@ -58,45 +58,31 @@ export const introLabels = {
   secondary: 'Choose Secondary Language(s)',
   primaryDescription: 'Dari: This is the language that the settings and other app labels will appear in.  You can still get content from both languages.',
   secondaryDescription: 'This used to determine the default categories to display to you.  You can change this later in your settings.',
-  content: 'Welcome to Voice of America!',
-  continue: 'Continue',
-}
-
-const hilight: React.CSSProperties = {
-  color: '#0162B1',
+  continue: 'ادامه دهید',
 }
 
 export const mediaPlayerLabels = {
   empty: (
     <div>
       <p>
-        This is VoA's <span style={hilight}>multimedia</span> player. When you play audio or video content, it will play here.
-      </p>
-      <p>
-        You can continue to navigate the app without stopping the <span style={hilight}>multimedia</span> by closing the drawer.
-      </p>
-      <p>
-        Use the round <span style={hilight}>multimedia</span> button at the bottom of the screen to open this screen again.
-      </p>
-      <p>
-        You can also start and stop the <span style={hilight}>multimedia</span> by pressing the button at the bottom while this screen is open.
+        شما تا کنون ویدیو یا صدایی را انتخاب نکرده اید. پس از آنکه شما محتویات مورد نظر تان را انتخاب کردید، ما آن را در این مجموعه برایتان حفظ خواهیم کرد تا هر وقتی خواستید آن را تماشا کنید یا بشنوید.
       </p>
     </div>
   ),
-  loading: 'Loading media...',
+  loading: 'در حال پخش ...',
 }
 
 export const mediaSettingsLabels = {
   normalSpeed: '1x',
   halfAgainSpeed: '1.5x',
   doubleSpeed: '2x',
-  chooseSpeed: 'Media playback speed',
+  chooseSpeed: 'سرعت پخش',
 }
 
 export const programsScreenLabels = {
-  videos: 'Video',
-  audio: 'Audio',
-  empty: 'No content',
+  videos: 'ویدیوهای انتخابی',
+  audio: 'نوارهای صوتی انتخابی',
+  empty: 'محتوا موجود نیست',
 }
 
 export const pullToRefreshLabels = {
@@ -105,28 +91,28 @@ export const pullToRefreshLabels = {
 }
 
 export const searchLabels = {
-  header: 'Search',
-  back: 'Back',
-  all: 'All',
-  query: 'Search',
-  empty: 'No content',
+  header: 'نتیجۀ جستجو',
+  back: 'عقب',
+  all: 'همه',
+  query: 'جستجو',
+  empty: 'پیدا نشد',
 }
 
 export const settingsLabels = {
-  header: 'My Settings',
+  header: 'تنظیمات من',
   panic: 'Reset the App',
-  sendToFriends: 'Share with friends',
-  sendFeedback: 'Send us feedback',
-  aboutVoa: 'The Voice of America (VOA) publishes accurate, balanced, and comprehensive news and information to an international audience. It started in 1942 as a radio news service for people living in closed and war-torn societies and has since grown into a multimedia news operation. VOA now reaches people on web, mobile devices and social media in more than 40 languages.',
-  feedbackEmail: 'app@voanews.com',
-  feedbackSubject: encodeURIComponent('VOA Mobile App'),
+  sendToFriends: 'این اپلیکشن را با دوستان تان شریک سازید',
+  sendFeedback: 'در مورد این اپلکیشن چی فکر می‌کنید',
+  aboutVoa: 'صدای امریکا خبرها و گزارش‌های معتبر، موثق و جامع را از سرتاسر جهان به شما می‌رساند. صدای امریکا در سال ۱۹۴۲ به نشرات رادیویی برای مردمانی آغاز کرد که در جریان جنگ جهانی دوم در نزدیک ساحات جنگی زیست داشتند. از آن زمان تا کنون صدای امریکا به یک خبرگزاری چند رسانه ای -رادیو، تلویزیون، آنلاین- مبدل شده است و به بیش از ۴۰ زبان زندۀ جهان نشرات دارد.',
+  feedbackEmail: 'afghanwebeditors@voanews.com',
+  feedbackSubject: encodeURIComponent('نظر در مورد اپلکیشن صدای امریکا'),
   feedbackBody: encodeURIComponent(''),
-  shareMessage: 'Check out the VOA mobile app',
+  shareMessage: 'این اپلکیشن را هم بیازمایید',
 }
 
 export const textSettingsLabels = {
-  textSize: 'Article font size',
-  normalSize: '1x',
-  largeSize: '1.5x',
-  hugeSize: '2x',
+  textSize: 'اندازۀ فونت خط',
+  normalSize: 'کوچک',
+  largeSize: 'متوسط',
+  hugeSize: 'بزرگ',
 }
