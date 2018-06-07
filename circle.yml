@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - restore_cache: &cacheTestKey
-          key: v4-voa-afghan-cordova-npm-{{ checksum "package-lock.json" }}
+          key: v5-voa-afghan-cordova-npm-{{ checksum "package-lock.json" }}
       - run: yarn global add npm@5
       - run: npm install
       - save_cache:
@@ -22,9 +22,9 @@ jobs:
     steps:
       - checkout
       - restore_cache: &cacheAndroidNpmKey
-          key: v1-voa-afghan-cordova-android-{{ checksum "package-lock.json" }}
+          key: v2-voa-afghan-cordova-android-{{ checksum "package-lock.json" }}
       - restore_cache: &cacheAndroidCordovaKey
-          key: v1-voa-afghan-cordova-android-{{ checksum "config.xml" }}
+          key: v2-voa-afghan-cordova-android-{{ checksum "config.xml" }}
       - run: bash scripts/setupAndroid.sh
       - run: npm install
       - save_cache:
