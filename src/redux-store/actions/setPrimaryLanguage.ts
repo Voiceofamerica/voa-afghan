@@ -4,7 +4,7 @@ import LanguageCode from 'types/LanguageCode'
 
 export const type = 'SET_PRIMARY_LANGUAGE'
 
-interface SetPrimaryLanguageOptions {
+export interface SetPrimaryLanguageOptions {
   primaryLanguage: LanguageCode
 }
 
