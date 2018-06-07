@@ -10,6 +10,7 @@ import { routerActions } from 'react-router-redux'
 
 import setMediaPlaybackRate from 'redux-store/actions/setMediaPlaybackRate'
 import setTextSize from 'redux-store/actions/setTextSize'
+import setLanguageCompletionState from 'redux-store/actions/setLanguageCompletionState'
 import AppState from 'types/AppState'
 
 import {
@@ -64,6 +65,8 @@ interface DispatchProps {
   clearAll: () => void
   setTextSize: (size: number) => void
   setPlaybackRate: (speed: number) => void
+  resetPrimaryLanguage: () => void
+  resetSecondaryLanguages: () => void
 }
 
 type RouteProps = RouteComponentProps<void>
@@ -105,6 +108,30 @@ class SettingsRoute extends React.Component<Props> {
       <div className={settingsRow}>
         <button className={settingsButton} onClick={() => history.push(`/settings/categories`)}>
           {categorySettingsLabels.header}
+        </button>
+      </div>
+    )
+  }
+
+  renderPrimaryLanguageReset () {
+    const { resetPrimaryLanguage } = this.props
+
+    return (
+      <div className={settingsRow}>
+        <button className={settingsButton} onClick={resetPrimaryLanguage}>
+          {settingsLabels.resetPrimaryLanguage}
+        </button>
+      </div>
+    )
+  }
+
+  renderSecondaryLanguagesReset () {
+    const { resetSecondaryLanguages } = this.props
+
+    return (
+      <div className={settingsRow}>
+        <button className={settingsButton} onClick={resetSecondaryLanguages}>
+          {settingsLabels.resetSecondaryLanguages}
         </button>
       </div>
     )
@@ -196,6 +223,8 @@ class SettingsRoute extends React.Component<Props> {
           <div className={buttons}>
             { this.renderFavoritesSettings() }
             { this.renderCategoriesSettings() }
+            { this.renderPrimaryLanguageReset() }
+            { this.renderSecondaryLanguagesReset() }
             { this.renderTextSettings() }
             { this.renderPlaybackSpeed() }
             { this.renderSendToFriends() }
@@ -229,6 +258,10 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): DispatchProps => ({
     dispatch(setTextSize({ textSize })),
   setPlaybackRate: (mediaPlaybackRate: number) =>
     dispatch(setMediaPlaybackRate({ mediaPlaybackRate })),
+  resetPrimaryLanguage: () =>
+    dispatch(setLanguageCompletionState({ primaryLanguageSet: false })),
+  resetSecondaryLanguages: () =>
+    dispatch(setLanguageCompletionState({ secondaryLanguagesSet: false })),
 })
 
 const withRedux = connect(mapStateToProps, mapDispatchToProps)
