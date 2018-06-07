@@ -58,7 +58,6 @@ export const introLabels = {
   secondary: 'Choose Secondary Language(s)',
   primaryDescription: 'Pashto: This is the language that the settings and other app labels will appear in.  You can still get content from both languages.',
   secondaryDescription: 'This used to determine the default categories to display to you.  You can change this later in your settings.',
-  content: 'Welcome to Voice of America!',
   continue: 'Continue',
 }
 
