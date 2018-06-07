@@ -11,17 +11,17 @@ export const graphqlAudience = Audience.pus
 
 export const articleLabels = {
   updatedOn: (date: string) => `Updated on ${date}`,
-  relatedContent: 'Related stories',
-  shareMessage: '',
+  relatedContent: 'اړونده مقالې',
+  shareMessage: 'دا مضمون هم وگورئ',
   galleryLoading: 'Gallery loading...',
 }
 
 export const categorySettingsLabels = {
-  header: 'Choose Categories',
-  myCategories: 'My Categories',
-  allCategories: 'All Categories',
-  dragAndDrop: 'Drag Categories',
-  headlinesFirst: 'Headline Category is First',
+  header: 'د مطالبو تنظیم',
+  myCategories: 'زما کتگورۍ',
+  allCategories: 'ټول مطلبونه',
+  dragAndDrop: 'د علاقې وړ برخې دلته ټولې کړئ',
+  headlinesFirst: 'د سر ټکو لست',
   cancel: 'Cancel',
 }
 
@@ -34,22 +34,22 @@ export const circumventionDrawerLabels = {
 }
 
 export const editorsChoiceLabels = {
-  header: 'Editor\'s Choice',
+  header: 'د اډیټر انتخاب',
 }
 
 export const errorBoundaryLabels = {
-  error: 'An error occurred.',
-  retry: 'Retry',
+  error: 'ستونزه رامنځ ته شوې',
+  retry: 'بیا هڅه وکړئ',
 }
 
 export const favoritesSettingsLabels = {
-  header: 'My Favorites',
-  removeAll: 'Remove All Favorites',
+  header: 'د علاقې وړ',
+  removeAll: 'ټول پاک کړئ',
 }
 
 export const homeLabels = {
-  headlines: 'Headlines',
-  search: 'Search',
+  headlines: 'د خبرونو سرټکي',
+  search: 'لټونه',
   manage: '+',
 }
 
@@ -58,74 +58,64 @@ export const introLabels = {
   secondary: 'Choose Secondary Language(s)',
   primaryDescription: 'Pashto: This is the language that the settings and other app labels will appear in.  You can still get content from both languages.',
   secondaryDescription: 'This used to determine the default categories to display to you.  You can change this later in your settings.',
-  continue: 'Continue',
-}
-
-const hilight: React.CSSProperties = {
-  color: '#0162B1',
+  continue: 'مخکې لاړ شئ',
 }
 
 export const mediaPlayerLabels = {
   empty: (
     <div>
       <p>
-        This is VoA's <span style={hilight}>multimedia</span> player. When you play audio or video content, it will play here.
-      </p>
-      <p>
-        You can continue to navigate the app without stopping the <span style={hilight}>multimedia</span> by closing the drawer.
-      </p>
-      <p>
-        Use the round <span style={hilight}>multimedia</span> button at the bottom of the screen to open this screen again.
-      </p>
-      <p>
-        You can also start and stop the <span style={hilight}>multimedia</span> by pressing the button at the bottom while this screen is open.
+        تاسې تر اوسه ویدیو او غږونه ندي انتخاب کړي. کله مو چې د علاقې وړ محتویات انتخاب کړل، مونږ به هغه پدغه مجموعه کې وساتو، هرکله چې غواړئ هغه کتلای شئ
       </p>
     </div>
   ),
-  loading: 'Loading media...',
+  loading: 'د چمتو کیدو په حال کې',
 }
 
 export const mediaSettingsLabels = {
   normalSpeed: '1x',
   halfAgainSpeed: '1.5x',
   doubleSpeed: '2x',
-  chooseSpeed: 'Media playback speed',
+  chooseSpeed: 'د خپریدو سرعت',
 }
 
 export const programsScreenLabels = {
-  videos: 'Video',
-  audio: 'Audio',
-  empty: 'No content',
+  allCategories: 'ټولې خپرونې',
+  videos: 'انتخابي ویدیوگانې',
+  audio: 'انتخابي غږیزې خپرونې',
+  empty: 'محتویات نشته',
 }
 
 export const pullToRefreshLabels = {
-  pull: 'Pull to refresh',
-  release: 'Release to refresh',
+  pull: 'تازه معلومات',
+  release: 'تازه معلومات',
 }
 
 export const searchLabels = {
-  header: 'Search',
-  back: 'Back',
-  all: 'All',
-  query: 'Search',
-  empty: 'No content',
+  header: 'د لټونې پایله',
+  back: 'شاته',
+  all: 'ټول',
+  query: 'د لټونې',
+  empty: 'ونه موندل شو',
 }
 
 export const settingsLabels = {
-  header: 'My Settings',
+  header: 'زما تنظیمات',
   panic: 'Reset the App',
-  sendToFriends: 'Share with friends',
-  sendFeedback: 'Send us feedback',
-  aboutVoa: 'The Voice of America (VOA) publishes accurate, balanced, and comprehensive news and information to an international audience. It started in 1942 as a radio news service for people living in closed and war-torn societies and has since grown into a multimedia news operation. VOA now reaches people on web, mobile devices and social media in more than 40 languages.',
-  feedbackEmail: 'app@voanews.com',
-  feedbackSubject: encodeURIComponent('VOA Mobile App'),
+  sendToFriends: 'دا اپلیکیشن له ملگرو سره شریک کړئ',
+  sendFeedback: 'د اپلیکیشن په اړه خپل نظر امریکا غږ سره شریک کړئ',
+  aboutVoa: 'د امریکا غږ د نړۍ د گوټ گوټ څخه باوري، موثق او جامع خبرونه او رپوټونه تاسو ته رسوي. د امریکا غږ په ١٩۴٢ کال کې هغو خلکو ته په رادیویي خپرونو پیل وکړ چې د دوهمې نړیوالې جگړې په لړ کې د جگړې سیمو ته نژدې ژوند کاوه. له هغه وخت راهیسې د امریکا غږ په څو رسنیزې خبرې شبکې بدله شوې چې د رادیو، تلویزیون او انټرنیټ له لارې د نړۍ په څه دپاسه ۴٠ ژوندیو ژبو خپرونې لري.',
+  feedbackEmail: 'afghanwebeditors@voanews.com',
+  feedbackSubject: encodeURIComponent('د اپلیکیشن په اړه نظر'),
   feedbackBody: encodeURIComponent(''),
-  shareMessage: 'Check out the VOA mobile app',
+  shareMessage: 'دا اپلیکیشن وازمایئ',
+  resetPrimaryLanguage: 'Reset Primary Language',
+  resetSecondaryLanguages: 'Reset Secondary Languages',
 }
 
 export const textSettingsLabels = {
-  textSize: 'Article font size',
-  normalSize: '1x',
-  largeSize: '1.5x',
-  hugeSize: '2x',
+  textSize: 'د لیک د تورو اندازه',
+  normalSize: 'کوچنی',
+  largeSize: 'وسط',
+  hugeSize: 'غټ',
 }

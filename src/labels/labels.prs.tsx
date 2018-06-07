@@ -80,6 +80,7 @@ export const mediaSettingsLabels = {
 }
 
 export const programsScreenLabels = {
+  allCategories: 'همه برنامه ها',
   videos: 'ویدیوهای انتخابی',
   audio: 'نوارهای صوتی انتخابی',
   empty: 'محتوا موجود نیست',
@@ -108,6 +109,8 @@ export const settingsLabels = {
   feedbackSubject: encodeURIComponent('نظر در مورد اپلکیشن صدای امریکا'),
   feedbackBody: encodeURIComponent(''),
   shareMessage: 'این اپلکیشن را هم بیازمایید',
+  resetPrimaryLanguage: 'Reset Primary Language',
+  resetSecondaryLanguages: 'Reset Secondary Languages',
 }
 
 export const textSettingsLabels = {
