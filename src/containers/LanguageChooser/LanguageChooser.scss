@@ -26,11 +26,15 @@
       align-items: center;
       font-weight: bold;
       padding-top: 50px;
-      padding-bottom: 50px;
     }
 
     .explanation {
       padding: 30px 0;
+      font-weight: initial;
+    }
+
+    .spacer {
+      height: 50px;
     }
   }
 

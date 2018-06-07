@@ -5,7 +5,7 @@ import { compose } from 'redux'
 
 import Checkbox from '@voiceofamerica/voa-shared/components/Checkbox'
 
-import setPrimaryLanguage from 'redux-store/actions/setPrimaryLanguage'
+import primaryLanguageThunk from 'redux-store/thunks/primaryLanguage'
 import setLanguageCompletionState from 'redux-store/actions/setLanguageCompletionState'
 
 import LanguageCode from 'types/LanguageCode'
@@ -15,7 +15,7 @@ import * as Dari from 'labels/labels.prs'
 import * as Pashto from 'labels/labels.pus'
 import { introLabels } from 'labels'
 
-import { languageChooser, content, titles, explanation, continueButton } from './LanguageChooser.scss'
+import { languageChooser, content, titles, spacer, explanation, continueButton } from './LanguageChooser.scss'
 
 interface StateProps {
   primaryLanguage: LanguageCode
@@ -50,6 +50,7 @@ class SettingsRoute extends React.Component<Props> {
               {Pashto.introLabels.primary}
             </div>
           </div>
+          <div className={spacer} />
           <Checkbox
             checked={primaryLanguage === Dari.languageCode}
             onChange={() => setPrimaryLanguage(Dari.languageCode)}
@@ -84,7 +85,7 @@ const mapStateToProps = ({ languageSettings: { primaryLanguage, primaryLanguageS
 })
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): DispatchProps => ({
-  setPrimaryLanguage: (primaryLanguage) => dispatch(setPrimaryLanguage({ primaryLanguage })),
+  setPrimaryLanguage: (primaryLanguage) => dispatch(primaryLanguageThunk({ primaryLanguage })),
   onContinue: () => dispatch(setLanguageCompletionState({ primaryLanguageSet: true })),
 })
 

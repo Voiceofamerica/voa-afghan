@@ -46,6 +46,7 @@ class SettingsRoute extends React.Component<Props> {
             <div>
               {introLabels.secondary}
             </div>
+            <div className={explanation}>{introLabels.secondaryDescription}</div>
           </div>
           <Checkbox
             checked={secondaryLanguages.indexOf(Dari.languageCode) >= 0}
@@ -59,7 +60,6 @@ class SettingsRoute extends React.Component<Props> {
           >
             {Pashto.languageName}
           </Checkbox>
-          <div className={explanation}>{introLabels.secondaryDescription}</div>
         </div>
         {
           languageChosen

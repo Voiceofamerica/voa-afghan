@@ -5,6 +5,8 @@ import { compose } from 'redux'
 
 import AppState from 'types/AppState'
 
+import ThemeProvider from '@voiceofamerica/voa-shared/components/ThemeProvider'
+
 import PrimaryLanguageChooser from './PrimaryLanguageChooser'
 import SecondaryLanguageChooser from './SecondaryLanguageChooser'
 
@@ -16,7 +18,7 @@ interface StateProps {
 type Props = StateProps
 
 class SettingsRoute extends React.Component<Props> {
-  render () {
+  renderChooser () {
     const { primaryLanguageSet, secondaryLanguagesSet } = this.props
 
     if (!primaryLanguageSet) {
@@ -26,6 +28,14 @@ class SettingsRoute extends React.Component<Props> {
     } else {
       return null
     }
+  }
+
+  render () {
+    return (
+      <ThemeProvider value={{ checkboxCheckedColor: '#2083C6' }}>
+        {this.renderChooser()}
+      </ThemeProvider>
+    )
   }
 }
 
