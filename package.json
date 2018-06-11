@@ -76,7 +76,7 @@
     "babel-loader": "^7.1.2",
     "copy-webpack-plugin": "^4.2.0",
     "cordova": "^8.0.0",
-    "cordova-android": "^7.1.0",
+    "cordova-android": "^6.4.0",
     "cordova-ios": "^4.5.4",
     "cordova-pdf-generator": "^1.9.3",
     "cordova-plugin-add-swift-support": "^1.7.1",
