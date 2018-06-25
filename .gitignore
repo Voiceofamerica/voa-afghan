@@ -68,7 +68,6 @@ platforms
 temp
 coverage
 storyLoader.js
-psiphon_config.json
 protected/*
 
 !**/.gitkeep

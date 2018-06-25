@@ -1,5 +1,5 @@
 
-# Voice Of America English App
+# Voice Of America Afghan App
 
 ## Download the App
 * ...
@@ -9,7 +9,6 @@
 * NodeJS LTS (Download)[https://nodejs.org/en/]
 * If you have a globally installed version of Cordova, uninstall.
 * Content from `protected.zip`:
-  * src/psiphon_config.json
   * static/ADBMobileConfig.json
 * For iOS build/development, install XCode (only available on MacOS)
 * For Android build/development, install [Android Studio](https://developer.android.com/studio/) ([additional setup required](#android-setup))
@@ -31,11 +30,6 @@ For CI:
 * `npm run build`
 
 To Publish to TestFlight:
-* In XCode, select the project, switch to Build Phases tab, add new script
-```
-set -e
-bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/PsiphonTunnel.framework/strip-frameworks.sh"
-```
 * In XCode, run `Product -> Archive`
   - Validate the archive
     - Strip and upload symbols _(both boxes checked on first screen)_

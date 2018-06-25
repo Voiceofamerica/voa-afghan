@@ -43,7 +43,6 @@ function MainLayout ({ component: Component, categories, ...rest }: Props) {
       return (
         <div className={layout}>
           <TopNav flex>
-            <StaticItem />
             <TopNavItem selected={isHeadlines} onClick={() => replace('/')}>
               {homeLabels.headlines}
             </TopNavItem>

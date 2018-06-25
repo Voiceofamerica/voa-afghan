@@ -15,7 +15,7 @@ import { IconItem } from '@voiceofamerica/voa-shared/components/BottomNav'
 import SvgIcon from '@voiceofamerica/voa-shared/components/SvgIcon'
 
 import { ArticleRouteQuery, ArticleRouteQueryVariables } from 'helpers/graphql-types'
-import playMedia from 'redux-store/thunks/playMediaFromPsiphon'
+import playMedia from 'redux-store/thunks/playMedia'
 import toggleFavoriteContent from 'redux-store/actions/toggleFavoriteContent'
 
 import analytics, { AnalyticsProps } from '@voiceofamerica/voa-shared/helpers/analyticsHelper'

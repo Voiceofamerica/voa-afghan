@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 import { ApolloProvider } from 'react-apollo'
 
 import store, { renderReady } from 'redux-store'
-import PsiphonIndicator from 'containers/PsiphonIndicator'
 import Router from 'containers/Router'
 import MediaPlayer from 'containers/MediaPlayer'
 import CircumventionDrawer from 'containers/CircumventionDrawer'
@@ -64,7 +63,6 @@ export default class App extends React.Component<{}, State> {
             appReady
             ? <div key='app' className={app}>
                 <LanguageChooser />
-                <PsiphonIndicator />
                 <Router />
                 <MediaPlayer />
                 <CircumventionDrawer />

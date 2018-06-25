@@ -10,7 +10,7 @@ import TicketList from '@voiceofamerica/voa-shared/components/TicketList'
 import { fromAudioArticleList } from '@voiceofamerica/voa-shared/helpers/itemListHelper'
 
 import Loader from 'components/Loader'
-import playMedia from 'redux-store/thunks/playMediaFromPsiphon'
+import playMedia from 'redux-store/thunks/playMedia'
 
 import { ProgramAudioQuery, ProgramAudioQueryVariables } from 'helpers/graphql-types'
 import { graphqlAudience, programsScreenLabels } from 'labels'

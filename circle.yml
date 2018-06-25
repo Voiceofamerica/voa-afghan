@@ -40,7 +40,6 @@ jobs:
             - "~/.android"
             - "plugins"
             - "platforms"
-      - run: unzip -o -P "$PROTECTED_PASS" protected.zip
       - run: NODE_ENV='production' npm run build:webpack
       - run: bash scripts/buildAndroid.sh
       - store_artifacts:
@@ -73,7 +72,6 @@ jobs:
             - "node_modules"
             - "plugins"
             - "platforms"
-      - run: unzip -o -P "$PROTECTED_PASS" protected.zip
       - run: NODE_ENV='production' npm run build:webpack
       - run: bash scripts/buildiOS.sh
       - store_artifacts:

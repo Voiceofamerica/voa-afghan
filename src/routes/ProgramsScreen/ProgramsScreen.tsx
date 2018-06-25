@@ -1,7 +1,7 @@
 
 import * as React from 'react'
 import { RouteComponentProps } from 'react-router'
-import TopNav, { TopNavItem, StaticItem } from '@voiceofamerica/voa-shared/components/TopNav'
+import TopNav, { TopNavItem } from '@voiceofamerica/voa-shared/components/TopNav'
 import ThemeProvider from '@voiceofamerica/voa-shared/components/ThemeProvider'
 
 import analytics, { AnalyticsProps } from '@voiceofamerica/voa-shared/helpers/analyticsHelper'
@@ -75,7 +75,6 @@ class ProgramsScreen extends React.Component<Props> {
     return (
       <ThemeProvider value={TopNavTheme}>
         <TopNav flex>
-          <StaticItem />
           {
             PROGRAM_ZONES.map(({ id, name }) => {
               const selected = zoneId === id
