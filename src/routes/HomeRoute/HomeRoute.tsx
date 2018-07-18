@@ -79,11 +79,11 @@ const withAnalytics = analytics<QueryProps>(({ data }) => ({
 const withHomeQuery = graphql(
   Query,
   {
-    options: {
+    options: () => ({
       variables: {
         source: graphqlAudience,
       } as HomeRouteQueryVariables,
-    },
+    }),
   },
 )
 

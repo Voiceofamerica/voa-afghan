@@ -200,11 +200,11 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): DispatchProps => ({
 const withQuery = graphql(
   Query,
   {
-    options: {
+    options: () => ({
       variables: {
         source: graphqlAudience,
       } as CategorySettingsQueryVariables,
-    },
+    }),
     props: ({ data }) => {
       let outputData = data as (typeof data) & CategorySettingsQuery
       if (!data.loading && !data.error) {

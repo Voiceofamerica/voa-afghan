@@ -28,6 +28,9 @@ import { ActorMap, buildReducer } from '../actorMap'
 import AppSettings from 'types/AppSettings'
 import Category from 'types/Category'
 
+import * as Dari from 'labels/labels.prs'
+import * as Pashto from 'labels/labels.pus'
+
 const dariCategories: Category[] = [
   {
     id: 4771,
@@ -109,10 +112,10 @@ const actors: ActorMap<AppSettings> = {
   }),
   [setSecondaryLanguagesType]: (prev, { secondaryLanguages }: SetSecondaryLanguagesAction) => {
     let categories = []
-    if (secondaryLanguages.includes('prs')) {
+    if (secondaryLanguages.includes(Dari.languageCode)) {
       categories = [...categories, ...dariCategories]
     }
-    if (secondaryLanguages.includes('pus')) {
+    if (secondaryLanguages.includes(Pashto.languageCode)) {
       categories = [...categories, ...pashtoCategories]
     }
 
