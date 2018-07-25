@@ -10,12 +10,12 @@ import * as Dari from './labels/labels.prs'
 import * as Pashto from './labels/labels.pus'
 
 setAnalyticsOptions({
-  language: 'english',
-  languageService: 'english',
-  propertyName: 'english',
+  language: 'afghan',
+  languageService: 'afghan',
+  propertyName: 'voa afghan news app',
   propertyId: 'something',
-  rsidAccount: 'something',
-  reportSuite: 'something',
+  rsidAccount: 'bbgvoa.afghan.streaming.app',
+  reportSuite: 'bbgvoa.afghan.streaming.app',
 })
 
 setDirection('ltr')
