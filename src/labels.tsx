@@ -18,7 +18,7 @@ setAnalyticsOptions({
   reportSuite: 'bbgvoa.afghan.streaming.app',
 })
 
-setDirection('ltr')
+setDirection('rtl')
 
 moment.locale('en-us')
 
