@@ -6,7 +6,7 @@ import { compose } from 'redux'
 import Checkbox from '@voiceofamerica/voa-shared/components/Checkbox'
 
 import setSecondaryLanguages from 'redux-store/actions/setSecondaryLanguages'
-import setLanguageCompletionState from 'redux-store/actions/setLanguageCompletionState'
+// import setLanguageCompletionState from 'redux-store/actions/setLanguageCompletionState'
 
 import LanguageCode from 'types/LanguageCode'
 import AppState from 'types/AppState'
@@ -15,7 +15,7 @@ import * as Dari from 'labels/labels.prs'
 import * as Pashto from 'labels/labels.pus'
 import { introLabels } from 'labels'
 
-import { languageChooser, content, titles, explanation, continueButton, disabled } from './LanguageChooser.scss'
+import { languageChooser, content, titles, explanation, continueButton, disabled } from 'containers/LanguageChooser/LanguageChooser.scss'
 
 interface StateProps {
   secondaryLanguages: LanguageCode[]
@@ -85,14 +85,14 @@ class SettingsRoute extends React.Component<Props> {
   }
 }
 
-const mapStateToProps = ({ languageSettings: { secondaryLanguages, secondaryLanguagesSet } }: AppState): StateProps => ({
-  secondaryLanguages,
-  secondaryLanguagesSet,
+const mapStateToProps = ({ languageSettings: { /* secondaryLanguages, secondaryLanguagesSet */ } }: AppState): StateProps => ({
+  secondaryLanguages: [],
+  secondaryLanguagesSet: true,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): DispatchProps => ({
   setSecondaryLanguages: (secondaryLanguages) => dispatch(setSecondaryLanguages({ secondaryLanguages })),
-  onContinue: () => dispatch(setLanguageCompletionState({ secondaryLanguagesSet: true })),
+  onContinue: () => null, // dispatch(setLanguageCompletionState({ secondaryLanguagesSet: true })),
 })
 
 const withRedux = connect(mapStateToProps, mapDispatchToProps)

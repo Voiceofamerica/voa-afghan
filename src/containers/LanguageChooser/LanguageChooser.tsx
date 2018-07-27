@@ -8,23 +8,23 @@ import AppState from 'types/AppState'
 import ThemeProvider from '@voiceofamerica/voa-shared/components/ThemeProvider'
 
 import PrimaryLanguageChooser from './PrimaryLanguageChooser'
-import SecondaryLanguageChooser from './SecondaryLanguageChooser'
+// import SecondaryLanguageChooser from './SecondaryLanguageChooser'
 
 interface StateProps {
   primaryLanguageSet: boolean
-  secondaryLanguagesSet: boolean
+  // secondaryLanguagesSet: boolean
 }
 
 type Props = StateProps
 
 class SettingsRoute extends React.Component<Props> {
   renderChooser () {
-    const { primaryLanguageSet, secondaryLanguagesSet } = this.props
+    const { primaryLanguageSet /*, secondaryLanguagesSet */ } = this.props
 
     if (!primaryLanguageSet) {
       return <PrimaryLanguageChooser />
-    } else if (!secondaryLanguagesSet) {
-      return <SecondaryLanguageChooser />
+    // } else if (!secondaryLanguagesSet) {
+    //   return <SecondaryLanguageChooser />
     } else {
       return null
     }
@@ -39,9 +39,9 @@ class SettingsRoute extends React.Component<Props> {
   }
 }
 
-const mapStateToProps = ({ languageSettings: { primaryLanguageSet, secondaryLanguagesSet } }: AppState): StateProps => ({
+const mapStateToProps = ({ languageSettings: { primaryLanguageSet /*, secondaryLanguagesSet */ } }: AppState): StateProps => ({
   primaryLanguageSet,
-  secondaryLanguagesSet,
+  // secondaryLanguagesSet,
 })
 
 const withRedux = connect(mapStateToProps)

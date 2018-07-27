@@ -4,10 +4,10 @@ import {
   SetPrimaryLanguageAction,
 } from '../actions/setPrimaryLanguage'
 
-import {
-  type as setSecondaryLanguagesType,
-  SetSecondaryLanguagesAction,
-} from '../actions/setSecondaryLanguages'
+// import {
+//   type as setSecondaryLanguagesType,
+//   SetSecondaryLanguagesAction,
+// } from '../actions/setSecondaryLanguages'
 
 import {
   type as setLanguageCompletionStateType,
@@ -22,28 +22,28 @@ const actors: ActorMap<LanguageSettings> = {
     ...prev,
     primaryLanguage,
   }),
-  [setSecondaryLanguagesType]: (prev, { secondaryLanguages }: SetSecondaryLanguagesAction) => ({
-    ...prev,
-    secondaryLanguages,
-  }),
+  // [setSecondaryLanguagesType]: (prev, { secondaryLanguages }: SetSecondaryLanguagesAction) => ({
+  //   ...prev,
+  //   secondaryLanguages,
+  // }),
   [setLanguageCompletionStateType]: (
     prev,
     {
       primaryLanguageSet = prev.primaryLanguageSet,
-      secondaryLanguagesSet = prev.secondaryLanguagesSet,
+      // secondaryLanguagesSet = prev.secondaryLanguagesSet,
     }: SetLanguageCompletionStateAction,
   ) => ({
     ...prev,
     primaryLanguageSet,
-    secondaryLanguagesSet,
+    // secondaryLanguagesSet,
   }),
 }
 
 export const INITIAL_STATE: LanguageSettings = {
   primaryLanguage: null,
-  secondaryLanguages: [],
+  // secondaryLanguages: [],
   primaryLanguageSet: false,
-  secondaryLanguagesSet: false,
+  // secondaryLanguagesSet: true,
 }
 
 export default buildReducer(INITIAL_STATE, actors)

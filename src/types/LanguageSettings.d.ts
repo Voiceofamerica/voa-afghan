@@ -3,7 +3,7 @@ import LanguageCode from './LanguageCode'
 
 export default interface LanguageSettings {
   primaryLanguage: LanguageCode | null
-  secondaryLanguages: LanguageCode[]
+  // secondaryLanguages: LanguageCode[]
   primaryLanguageSet: boolean
-  secondaryLanguagesSet: boolean
+  // secondaryLanguagesSet: boolean
 }

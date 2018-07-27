@@ -19,10 +19,15 @@ import {
   SetTextSizeAction,
 } from '../actions/setTextSize'
 
+// import {
+//   type as setSecondaryLanguagesType,
+//   SetSecondaryLanguagesAction,
+// } from '../actions/setSecondaryLanguages'
+
 import {
-  type as setSecondaryLanguagesType,
-  SetSecondaryLanguagesAction,
-} from '../actions/setSecondaryLanguages'
+  type as setPrimaryLanguageType,
+  SetPrimaryLanguageAction,
+} from '../actions/setPrimaryLanguage'
 
 import { ActorMap, buildReducer } from '../actorMap'
 import AppSettings from 'types/AppSettings'
@@ -110,13 +115,26 @@ const actors: ActorMap<AppSettings> = {
     ...prev,
     textSize,
   }),
-  [setSecondaryLanguagesType]: (prev, { secondaryLanguages }: SetSecondaryLanguagesAction) => {
+  // [setSecondaryLanguagesType]: (prev, { secondaryLanguages }: SetSecondaryLanguagesAction) => {
+  //   let categories = []
+  //   if (secondaryLanguages.includes(Dari.languageCode)) {
+  //     categories = [...categories, ...dariCategories]
+  //   }
+  //   if (secondaryLanguages.includes(Pashto.languageCode)) {
+  //     categories = [...categories, ...pashtoCategories]
+  //   }
+  //
+  //   return {
+  //     ...prev,
+  //     categories,
+  //   }
+  // },
+  [setPrimaryLanguageType]: (prev, { primaryLanguage }: SetPrimaryLanguageAction) => {
     let categories = []
-    if (secondaryLanguages.includes(Dari.languageCode)) {
-      categories = [...categories, ...dariCategories]
-    }
-    if (secondaryLanguages.includes(Pashto.languageCode)) {
-      categories = [...categories, ...pashtoCategories]
+    if (primaryLanguage === Dari.languageCode) {
+      categories = dariCategories
+    } else if (primaryLanguage === Pashto.languageCode) {
+      categories = pashtoCategories
     }
 
     return {

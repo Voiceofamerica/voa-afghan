@@ -224,7 +224,7 @@ class SettingsRoute extends React.Component<Props> {
             { this.renderFavoritesSettings() }
             { this.renderCategoriesSettings() }
             { this.renderPrimaryLanguageReset() }
-            { this.renderSecondaryLanguagesReset() }
+            { /* this.renderSecondaryLanguagesReset() */ }
             { this.renderTextSettings() }
             { this.renderPlaybackSpeed() }
             { this.renderSendToFriends() }
@@ -261,7 +261,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): DispatchProps => ({
   resetPrimaryLanguage: () =>
     dispatch(setLanguageCompletionState({ primaryLanguageSet: false })),
   resetSecondaryLanguages: () =>
-    dispatch(setLanguageCompletionState({ secondaryLanguagesSet: false })),
+    null, // dispatch(setLanguageCompletionState({ secondaryLanguagesSet: false })),
 })
 
 const withRedux = connect(mapStateToProps, mapDispatchToProps)
