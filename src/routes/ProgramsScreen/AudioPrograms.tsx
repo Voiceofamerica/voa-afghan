@@ -2,12 +2,12 @@
 import * as React from 'react'
 import { compose } from 'redux'
 import { History } from 'history'
-import { match } from 'react-router'
 import { graphql, ChildProps, QueryOpts } from 'react-apollo'
 import { connect, Dispatch } from 'react-redux'
+import * as moment from 'moment'
 
 import TicketList from '@voiceofamerica/voa-shared/components/TicketList'
-import { fromAudioArticleList } from '@voiceofamerica/voa-shared/helpers/itemListHelper'
+import { fromProgramList } from '@voiceofamerica/voa-shared/helpers/itemListHelper'
 
 import Loader from 'components/Loader'
 import playMedia from 'redux-store/thunks/playMedia'
@@ -15,13 +15,12 @@ import playMedia from 'redux-store/thunks/playMedia'
 import { ProgramAudioQuery, ProgramAudioQueryVariables } from 'helpers/graphql-types'
 import { graphqlAudience, programsScreenLabels } from 'labels'
 
-import Params from './Params'
 import * as Query from './Audio.graphql'
 import { programContent, emptyContent } from './ProgramsScreen.scss'
 
 interface OwnProps {
   history: History
-  match: match<Params>
+  zoneId: number
 }
 
 interface DispatchProps {
@@ -39,7 +38,7 @@ class AudioPrograms extends React.Component<Props> {
       <div className={programContent}>
         <Loader data={data}>
           <TicketList
-            items={fromAudioArticleList(data.content)}
+            items={fromProgramList(data.audioProgram, d => moment(d).format('L'))}
             onItemClick={this.playAudio}
             emptyContent={this.renderEmpty()}
           />
@@ -57,14 +56,14 @@ class AudioPrograms extends React.Component<Props> {
   }
 
   private playAudio = (id: number) => {
-    const { data: { content } } = this.props
-    const article = content.find(item => item.id === id)
-    const { url, audioTitle, audioDescription } = article.audio
+    const { data: { audioProgram } } = this.props
+    const program = audioProgram.find(item => item.id === id)
+    const { url, programTitle, programDescription, image } = program
     this.props.playMedia(
       url,
-      audioTitle,
-      audioDescription,
-      article.image && article.image.hero,
+      programTitle,
+      programDescription,
+      image && image.hero,
     )
   }
 }
@@ -75,7 +74,7 @@ const withQuery = graphql<QueryProps, ProgramAudioQuery>(
     options: (ownProps: OwnProps): QueryOpts<ProgramAudioQueryVariables> => ({
       variables: {
         source: graphqlAudience,
-        zone: parseInt(ownProps.match.params.zone || '0', 10),
+        category: ownProps.zoneId,
       },
     }),
   },
