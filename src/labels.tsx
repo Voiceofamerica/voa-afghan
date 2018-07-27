@@ -13,7 +13,7 @@ setAnalyticsOptions({
   language: 'afghan',
   languageService: 'afghan',
   propertyName: 'voa afghan news app',
-  propertyId: 'something',
+  propertyId: '397',
   rsidAccount: 'bbgvoa.afghan.streaming.app',
   reportSuite: 'bbgvoa.afghan.streaming.app',
 })
