@@ -10,10 +10,10 @@ export const languageCode = 'pus'
 export const graphqlAudience = Audience.pus
 
 export const articleLabels = {
-  updatedOn: (date: string) => `Updated on ${date}`,
+  updatedOn: (date: string) => `آخرین تجدید ${date}`,
   relatedContent: 'اړونده مقالې',
   shareMessage: 'دا مضمون هم وگورئ',
-  galleryLoading: 'Gallery loading...',
+  galleryLoading: 'لټونه',
 }
 
 export const categorySettingsLabels = {
@@ -23,14 +23,6 @@ export const categorySettingsLabels = {
   dragAndDrop: 'د علاقې وړ برخې دلته ټولې کړئ',
   headlinesFirst: 'د سر ټکو لست',
   cancel: 'Cancel',
-}
-
-export const circumventionDrawerLabels = {
-  content: (
-    <div>
-      Your connection is secured via a VPN.
-    </div>
-  ),
 }
 
 export const editorsChoiceLabels = {
@@ -101,7 +93,6 @@ export const searchLabels = {
 
 export const settingsLabels = {
   header: 'زما تنظیمات',
-  panic: 'Reset the App',
   sendToFriends: 'دا اپلیکیشن له ملگرو سره شریک کړئ',
   sendFeedback: 'د اپلیکیشن په اړه خپل نظر امریکا غږ سره شریک کړئ',
   aboutVoa: 'د امریکا غږ د نړۍ د گوټ گوټ څخه باوري، موثق او جامع خبرونه او رپوټونه تاسو ته رسوي. د امریکا غږ په ١٩۴٢ کال کې هغو خلکو ته په رادیویي خپرونو پیل وکړ چې د دوهمې نړیوالې جگړې په لړ کې د جگړې سیمو ته نژدې ژوند کاوه. له هغه وخت راهیسې د امریکا غږ په څو رسنیزې خبرې شبکې بدله شوې چې د رادیو، تلویزیون او انټرنیټ له لارې د نړۍ په څه دپاسه ۴٠ ژوندیو ژبو خپرونې لري.',

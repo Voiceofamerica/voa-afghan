@@ -10,10 +10,10 @@ export const languageCode = 'prs'
 export const graphqlAudience = Audience.prs
 
 export const articleLabels = {
-  updatedOn: (date: string) => `Updated on ${date}`,
+  updatedOn: (date: string) => `تجدید ${date}`,
   relatedContent: 'مطالب مرتبط',
   shareMessage: '',
-  galleryLoading: 'Gallery loading...',
+  galleryLoading: 'جستجو',
 }
 
 export const categorySettingsLabels = {
@@ -23,14 +23,6 @@ export const categorySettingsLabels = {
   dragAndDrop: 'بخش های مورد نظر تان را اینجا اضافه کنید',
   headlinesFirst: 'فهرست سرخط ها',
   cancel: 'Cancel',
-}
-
-export const circumventionDrawerLabels = {
-  content: (
-    <div>
-      Your connection is secured via a VPN.
-    </div>
-  ),
 }
 
 export const editorsChoiceLabels = {
@@ -87,8 +79,8 @@ export const programsScreenLabels = {
 }
 
 export const pullToRefreshLabels = {
-  pull: 'Pull to refresh',
-  release: 'Release to refresh',
+  pull: 'معلومات تازه',
+  release: 'معلومات تازه',
 }
 
 export const searchLabels = {
@@ -101,7 +93,6 @@ export const searchLabels = {
 
 export const settingsLabels = {
   header: 'تنظیمات من',
-  panic: 'Reset the App',
   sendToFriends: 'این اپلیکشن را با دوستان تان شریک سازید',
   sendFeedback: 'در مورد این اپلکیشن چی فکر می‌کنید',
   aboutVoa: 'صدای امریکا خبرها و گزارش‌های معتبر، موثق و جامع را از سرتاسر جهان به شما می‌رساند. صدای امریکا در سال ۱۹۴۲ به نشرات رادیویی برای مردمانی آغاز کرد که در جریان جنگ جهانی دوم در نزدیک ساحات جنگی زیست داشتند. از آن زمان تا کنون صدای امریکا به یک خبرگزاری چند رسانه ای -رادیو، تلویزیون، آنلاین- مبدل شده است و به بیش از ۴۰ زبان زندۀ جهان نشرات دارد.',
