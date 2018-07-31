@@ -1,5 +1,5 @@
-query EditorsChoiceRoute($source: Audience!) {
-  content(source: $source, type: [Article, Video, PhotoGallery, Clip]) {
+query EditorsChoiceRoute($source: Audience!, $zoneId: Int!) {
+  content(source: $source, type: [Article, Video, PhotoGallery, Clip], zoneId: $zoneId) {
     id
     title
     introduction

@@ -6,7 +6,6 @@ import { ApolloProvider } from 'react-apollo'
 import store, { renderReady } from 'redux-store'
 import Router from 'containers/Router'
 import MediaPlayer from 'containers/MediaPlayer'
-import CircumventionDrawer from 'containers/CircumventionDrawer'
 import LanguageChooser from 'containers/LanguageChooser'
 import client from 'helpers/graphql-client'
 import { showControls } from '@voiceofamerica/voa-shared/helpers/mediaControlHelper'
@@ -65,7 +64,6 @@ export default class App extends React.Component<{}, State> {
                 <LanguageChooser />
                 <Router />
                 <MediaPlayer />
-                <CircumventionDrawer />
               </div>
             : <div key='app' />
           }

@@ -27,6 +27,7 @@ export const categorySettingsLabels = {
 
 export const editorsChoiceLabels = {
   header: 'انتخاب ادیتر',
+  zoneId: 5506,
 }
 
 export const errorBoundaryLabels = {
@@ -46,9 +47,9 @@ export const homeLabels = {
 }
 
 export const introLabels = {
-  primary: 'Choose Primary Language',
+  primary: 'زبان مورد نظرتان را انتخاب کنید',
   secondary: 'Choose Secondary Language(s)',
-  primaryDescription: 'Dari: This is the language that the settings and other app labels will appear in.  You can still get content from both languages.',
+  primaryDescription: 'همه تنظیمات و عناوین این اپلکیشن به زبان دری ظاهر خواهد شد. با آنهم شما قادر خواهید بود که با برگشت به این صفحه و تغییر زبان، محتویات را به زبان پشتو نیز دریافت کنید.',
   secondaryDescription: 'This used to determine the default categories to display to you.  You can change this later in your settings.',
   continue: 'ادامه دهید',
 }
@@ -100,7 +101,7 @@ export const settingsLabels = {
   feedbackSubject: encodeURIComponent('نظر در مورد اپلکیشن صدای امریکا'),
   feedbackBody: encodeURIComponent(''),
   shareMessage: 'این اپلکیشن را هم بیازمایید',
-  resetPrimaryLanguage: 'Reset Primary Language',
+  resetPrimaryLanguage: 'محتویات به زبان پشتو',
   resetSecondaryLanguages: 'Reset Secondary Languages',
 }
 

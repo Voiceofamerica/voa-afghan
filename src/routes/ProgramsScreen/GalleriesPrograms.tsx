@@ -60,11 +60,11 @@ class GalleryPrograms extends React.Component<Props> {
 const withQuery = graphql<Props, ProgramGalleriesQuery>(
   Query,
   {
-    options: () => ({
+    options: {
       variables: {
         source: graphqlAudience,
       } as ProgramGalleriesQueryVariables,
-    }),
+    },
   },
 )
 

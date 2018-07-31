@@ -21,7 +21,7 @@ import {
   mediaSettingsLabels,
 } from 'labels'
 
-import { settings, panicButtonHolder, panicButton, panicButtonIcon, buttons, settingsRow, settingsButton, row, aboutVoa, content, settingsItem, settingsRowHeader, settingsValuesRow, active } from './Settings.scss'
+import { settings, buttons, settingsRow, settingsButton, aboutVoa, content, settingsItem, settingsRowHeader, settingsValuesRow, active } from './Settings.scss'
 
 const SHARE_URL = 'https://www.voanews.com/p/5850.html'
 
@@ -74,21 +74,6 @@ type RouteProps = RouteComponentProps<void>
 type Props = RouteProps & AnalyticsProps & StateProps & DispatchProps
 
 class SettingsRoute extends React.Component<Props> {
-  renderPanicButton () {
-    const { clearAll } = this.props
-
-    return (
-      <div className={row}>
-        <div className={panicButtonHolder}>
-          <div className={panicButton} onClick={clearAll}>
-            <i className={`mdi mdi-alert ${panicButtonIcon}`} />
-            {settingsLabels.panic}
-          </div>
-        </div>
-      </div>
-    )
-  }
-
   renderFavoritesSettings () {
     const { history } = this.props
 
@@ -219,7 +204,6 @@ class SettingsRoute extends React.Component<Props> {
     return (
       <div className={settings}>
         <div className={content}>
-          { this.renderPanicButton() }
           <div className={buttons}>
             { this.renderFavoritesSettings() }
             { this.renderCategoriesSettings() }

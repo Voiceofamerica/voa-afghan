@@ -27,6 +27,7 @@ export const categorySettingsLabels = {
 
 export const editorsChoiceLabels = {
   header: 'د اډیټر انتخاب',
+  zoneId: 5507,
 }
 
 export const errorBoundaryLabels = {
@@ -46,9 +47,9 @@ export const homeLabels = {
 }
 
 export const introLabels = {
-  primary: 'Choose Primary Language',
+  primary: 'د خپلې خوښې ژبه مو وټاکئ',
   secondary: 'Choose Secondary Language(s)',
-  primaryDescription: 'Pashto: This is the language that the settings and other app labels will appear in.  You can still get content from both languages.',
+  primaryDescription: 'دلته به ټول عنوانونه او تنظیمات په پښتو ژبه ښکاره شي. تاسو دغې پاڼې ته په ورتلو کولی شی چې بله ژبه وټاکی او مضامین په دري ژبه ولولی.',
   secondaryDescription: 'This used to determine the default categories to display to you.  You can change this later in your settings.',
   continue: 'مخکې لاړ شئ',
 }
@@ -100,7 +101,7 @@ export const settingsLabels = {
   feedbackSubject: encodeURIComponent('د اپلیکیشن په اړه نظر'),
   feedbackBody: encodeURIComponent(''),
   shareMessage: 'دا اپلیکیشن وازمایئ',
-  resetPrimaryLanguage: 'Reset Primary Language',
+  resetPrimaryLanguage: 'د خپلې خوښې ژبې بدلول',
   resetSecondaryLanguages: 'Reset Secondary Languages',
 }
 

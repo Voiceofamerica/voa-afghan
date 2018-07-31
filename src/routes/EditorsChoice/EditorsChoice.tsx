@@ -14,7 +14,7 @@ import analytics, { AnalyticsProps } from '@voiceofamerica/voa-shared/helpers/an
 
 import Loader from 'components/Loader'
 import PullToRefresh from 'components/PullToRefresh'
-import { graphqlAudience, homeLabels } from 'labels'
+import { graphqlAudience, homeLabels, editorsChoiceLabels } from 'labels'
 
 type QueryProps = ChildProps<RouteComponentProps<void>, EditorsChoiceRouteQuery>
 
@@ -82,6 +82,7 @@ const withEditorsChoiceQuery = graphql(
     options: () => ({
       variables: {
         source: graphqlAudience,
+        zoneId: editorsChoiceLabels.zoneId,
       } as EditorsChoiceRouteQueryVariables,
     }),
   },

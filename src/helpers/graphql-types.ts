@@ -155,6 +155,7 @@ export type CategorySettingsQuery = {
 
 export type EditorsChoiceRouteQueryVariables = {
   source: Audience,
+  zoneId: number,
 };
 
 export type EditorsChoiceRouteQuery = {
