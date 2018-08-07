@@ -3,6 +3,7 @@ import * as React from 'react'
 import { Subscription } from 'rxjs/Subscription'
 import { Route, Switch } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'
+import { connect } from 'react-redux'
 
 import { backButtonObservable } from '@voiceofamerica/voa-shared/helpers/cordovaHelper'
 
@@ -24,6 +25,9 @@ import {
   favoritesSettingsLabels,
 } from 'labels'
 
+import LanguageCode from 'types/LanguageCode'
+import AppState from 'types/AppState'
+
 import BottomOnlyLayout from './layouts/BottomOnlyLayout'
 import HeadingLayout from './layouts/HeadingLayout'
 import HeadingOnlyLayout from './layouts/HeadingOnlyLayout'
@@ -31,7 +35,11 @@ import MainLayout from './layouts/MainLayout'
 
 import history from './history'
 
-export default class Router extends React.Component {
+interface StateProps {
+  primaryLanguage: LanguageCode
+}
+
+class Router extends React.Component<StateProps> {
   private historySubscription: Subscription
 
   componentDidMount () {
@@ -66,3 +74,9 @@ export default class Router extends React.Component {
     )
   }
 }
+
+export const mapStateToProps = (state: AppState): StateProps => ({
+  primaryLanguage: state.languageSettings.primaryLanguage,
+})
+
+export default connect(mapStateToProps)(Router)
