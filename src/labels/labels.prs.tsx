@@ -4,6 +4,7 @@ import * as React from 'react'
 
 import { Audience } from 'helpers/graphql-types'
 
+export const appTopic = 'prs'
 export const languageName = 'دری‎'
 export const languageCode = 'prs'
 
