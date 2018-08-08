@@ -23,25 +23,29 @@ function getTopic (languageCode: LanguageCode): string {
 
 export default ({ primaryLanguage }: SetPrimaryLanguageOptions) =>
   (dispatch: Dispatch<AppState> /*, getState: () => AppState */) => {
-    const topic = getTopic(primaryLanguage)
-    const status = statusSubject.getValue()
+    try {
+      const topic = getTopic(primaryLanguage)
+      const status = statusSubject.getValue()
 
-    status.subscriptions
-      .filter(t => t !== topic)
-      .forEach(topic => {
-        const sub = unsubscribeFromTopic(topic).subscribe(status => {
-          if (status.initialized && !status.subscriptions.some(t => t === topic)) {
+      status.subscriptions
+        .filter(t => t !== topic)
+        .forEach(topic => {
+          const sub = unsubscribeFromTopic(topic).subscribe(status => {
+            if (status.initialized && !status.subscriptions.some(t => t === topic)) {
+              sub.unsubscribe()
+            }
+          })
+        })
+
+      if (!status.subscriptions.some(t => t === topic)) {
+        const sub = subscribeToTopic(topic).subscribe(status => {
+          if (status.initialized && status.subscriptions.some(t => t === topic)) {
             sub.unsubscribe()
           }
         })
-      })
-
-    if (!status.subscriptions.some(t => t === topic)) {
-      const sub = subscribeToTopic(topic).subscribe(status => {
-        if (status.initialized && status.subscriptions.some(t => t === topic)) {
-          sub.unsubscribe()
-        }
-      })
+      }
+    } catch (err) {
+      console.warn('an error occurred while altering push notification subscriptions')
     }
 
     dispatch(setPrimaryLanguage({ primaryLanguage }))
